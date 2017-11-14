@@ -15,16 +15,6 @@ server.get('/post', (req, res) => {
   })
 })
 
-server.get('/protectedtest', jwt({ secret: 'key' }) , (req, res) => {
-  modelGetter.Post.findOne((err, post) => {
-    if(err) {
-      console.log('OPS!') 
-      return
-    }
-    console.log(post)
-  })
-})
-
 server.listen(8080, () => {
   logger.info('App is up!')
 })
