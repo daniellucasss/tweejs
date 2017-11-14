@@ -1,0 +1,16 @@
+{
+  "name": "tweejs-back",
+  "version": "1.0.0",
+  "description": "An application similar to Twitter only for study purposes",
+  "main": "index.js",
+  "author": "Daniel Lucas",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "jsonwebtoken": "^8.1.0",
+    "log4js": "^2.3.11",
+    "mongoose": "^4.13.0",
+    "restify": "^6.3.1",
+    "restify-jwt": "^0.4.0"
+  }
+}
