@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "An application similar to Twitter only for study purposes",
   "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
   "author": "Daniel Lucas",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "bluebird": "^3.5.1",
-    "jsonwebtoken": "^8.1.0",
+    "jwt-simple": "^0.5.1",
     "log4js": "^2.3.11",
     "mongoose": "^4.13.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
     "restify": "^6.3.1"
   }
 }
