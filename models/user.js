@@ -11,7 +11,7 @@ let UserSchema = new Schema({
 })
 
 UserSchema.pre('save', function(next) {
-  let user = this
+  const user = this
   passwordUtils.passwordEncrypter(user, next)
 })
 

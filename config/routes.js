@@ -7,7 +7,7 @@ const passport = require('./passport')
 const init = function(server, logger) {
   server.use(passport.initialize())
   server.get('/', (req, res) => {
-    res.send('MAIN PAGE')
+    res.send('API')
   })
       
   server.get('/posts', (req, res) => {
@@ -29,12 +29,15 @@ const init = function(server, logger) {
         res.send('Error')
       }
       if (user && passwordUtils.userHasSamePassword(user, req.body.password)) {
-        const payload = { id: user.id }
+        logger.info('User ' + user.name + ' logged!')
+        const payload = { login: user.login }
         const token = jwt.encode(payload, 'secretstuff')
+        logger.info('Token ' + token + ' generated!')
         res.json({ token: token})
+      } else {
+        res.status(401)
+        res.send('Login or password not match')
       }
-      res.status(401)
-      res.send('Login or password not match')
     })
   })
 }
